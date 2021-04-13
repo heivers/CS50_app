@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Classification Result
+{% endblock %}
+
+{% block main %}
+
+    <div class="w3-content w3-center">
+        <h1>Classification Result</h1>
+        <div class="w3-image">
+            <img src="/static/photos/{{ filename }}" style="width:100%;max-width:400px">
+        </div>
+    </div>
+    <div class="w3-content w3-center">
+        <h3>Prediction: {{ prediction }}</h3>
+        <h3>Probability: {{ probability }} %</h3>
+    </div>
+    
+
+{% endblock %}

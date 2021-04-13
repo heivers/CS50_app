@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>CS50 Final Project: {% block title%}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+    </head>
+    <body>
+        <!--Navigation Bar-->
+        <div class="w3-top w3-bar w3-black">
+            <a href="/" class="w3-bar-item w3-button">Home</a>
+            <a href="/classifier" class="w3-bar-item w3-button">Pet Classifier</a>
+            <a href="/about" class="w3-bar-item w3-button">About me</a>
+        </div>
+
+        <div class=w3-padding-large></div>
+
+        <div class="w3-panel w3-red">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <main class="w3-container">
+        
+            {% block main %}{% endblock %}
+            
+        </main>
+
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-large">
+            <a href="https://www.twitter.com/barthk12"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+            <p class="w3-medium">Model trained on The Oxford-IIIT Pet Dataset</p>
+            <p class="w3-medium">Buy me coffee? <a href="https://paypal.me/BartHeerkens"><i class="fa fa-paypal w3-hover-opacity"></i> Me</a></p>
+        </footer>
+    </body>
+</html>

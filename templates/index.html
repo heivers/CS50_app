@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main Page
+{% endblock %}
+
+{% block main %}
+
+
+    <div class="w3-content">
+    <h1>Welcome to my CS50 Final Project</h1>
+    <p> This Web App is trained on a total of 37 breeds of pets. (Dogs and Cats) <br>
+    Please Keep in mind that this is a "work in progress" web app.</p>
+
+    <p> To upload an image and classify. Click <a href="/classifier" class="w3-hover-black">Here</a></p>
+    </div>
+    <div class="w3-content">
+        <table class="w3-table-all w3-half">
+            <tr class="w3-black">
+                <th>
+                    Dog Breeds
+                </th>
+            </tr>
+            {% for dog in dogs %}
+            <tr class="w3-hover-black">
+                <td>{{ dog }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <table class="w3-table-all w3-half">
+            <tr class="w3-black">
+                <th>
+                    Cat Breeds
+                </th>
+            </tr>
+            {% for cat in cats %}
+            <tr class="w3-hover-black">
+                <td>{{ cat }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    {% endblock %}
