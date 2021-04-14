@@ -1,5 +1,5 @@
 flask
-PIL
+pillow
 tflite_runtime.interpreter
 werkzeug
 flask_session
