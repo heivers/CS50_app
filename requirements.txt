@@ -5,4 +5,5 @@ numpy
 pillow
 werkzeug
 flask_session
+gunicorn
 tflite_runtime
