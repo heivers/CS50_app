@@ -1,7 +1,8 @@
+--extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
+
 flask
 numpy
 pillow
 werkzeug
 flask_session
-
---extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
+tflite_runtime
