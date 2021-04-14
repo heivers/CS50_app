@@ -2,3 +2,5 @@ flask
 pillow
 werkzeug
 flask_session
+
+--extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
