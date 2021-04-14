@@ -2,5 +2,3 @@ flask
 pillow
 werkzeug
 flask_session
-
-https://google-coral.github.io/py-repo/tflite_runtime
