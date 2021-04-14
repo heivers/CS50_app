@@ -1,0 +1,5 @@
+flask
+PIL
+tflite_runtime.interpreter
+werkzeug
+flask_session
