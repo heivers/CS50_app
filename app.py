@@ -124,7 +124,7 @@ def classifier():
              top = results.argsort()[-1:][::-1][0]
              prediction = breeds[top]
              probability = f'{results[top]*100:.2f}'
-             return render_template("result.html", filename=filename, prediction=prediction, probability=probability, breeds=breeds)
+             return render_template("result.html", filename=filename, prediction=prediction, probability=probability)
          else:
              flash("Filetype not supported")
              return redirect(request.url)

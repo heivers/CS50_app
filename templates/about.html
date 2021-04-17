@@ -1,10 +1,35 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    About me
+    About This Project
 {% endblock %}
 
 {% block main %}
-<p class=w3-container w3-center>Hello World!</p>
 
+<!-- Left Column -->
+<div class="w3-third w3-bar w3-black">
+    <div class="w3-black w3-text-white w3-card-4">
+        <div class="w3-display-container">
+            <img src="static/me.jpg" style="width:75%" alt="This is me">
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>IT Crowd</p>
+        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Vienna, Austria</p>
+        <br>
+        <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-blue"></i>Languages</b></p>
+        <p>Python - Flask</p>
+        <p>Tensorflow - Keras</p>
+        <p>HTML - CSS</p>
+
+    </div>
+</div>
+
+<!-- Right Column-->
+<!-- Right Column -->
+<div class="w3-twothird">
+    <h2>The Three major steps to create this app</h2>
+
+</div>
 {% endblock %}
