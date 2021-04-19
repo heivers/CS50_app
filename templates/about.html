@@ -7,15 +7,15 @@
 {% block main %}
 
 <!-- Left Column -->
-<div class="w3-third w3-bar w3-black">
+<div class="w3-third w3-bar w3-black w3-padding-top-32">
     <div class="w3-black w3-text-white w3-card-4">
-        <div class="w3-display-container">
+        <div class="w3-display-container w3-center">
             <img src="static/me.jpg" style="width:75%" alt="This is me">
         </div>
     </div>
 
     <div class="w3-container">
-        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>IT Crowd</p>
+        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>IT Guy</p>
         <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Vienna, Austria</p>
         <br>
         <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-blue"></i>Languages</b></p>
@@ -27,9 +27,51 @@
 </div>
 
 <!-- Right Column-->
-<!-- Right Column -->
-<div class="w3-twothird">
-    <h2>The Three major steps to create this app</h2>
 
+<div class="w3-twothird">
+    <h2 class="w3-center w3-bar w3-black w3-padding-large">The major steps to create this app</h2>
+
+    <p>
+        <button class="w3-button w3-black w3-tiny" onclick="w3.hide('#Prep')">Hide Preparation</button>
+        <button class="w3-button w3-black w3-tiny" onclick="w3.show('#Prep')">Show Preparation</button>
+        <button class="w3-button w3-black w3-tiny" onclick="w3.hide('#Train')">Hide Training</button>
+        <button class="w3-button w3-black w3-tiny" onclick="w3.show('#Train')">Show Training</button>
+        <button class="w3-button w3-black w3-tiny" onclick="w3.hide('#App')">Hide App</button>
+        <button class="w3-button w3-black w3-tiny" onclick="w3.show('#App')">Show App</button>
+    </p>
+
+    <div id="Prep" class="w3-container">
+        <h2>Data Preparation</h2>
+        <p>For this model the Oxford-IIIT Pet Dataset from Tensorflow was used.
+            It contains about 7400 images.
+        </p>
+        <p>The dataset was split into a training, validation and test set.(80/10/10).
+            All images were resized and rescaled (values between 0 and 1).
+            Data augmentation was used on the training set.
+        </p>
+        <img src="static/augmentation.png" style="width:50%" alt="Augmentation">
+     </div>
+
+     <div id="Train" class="w3-container">
+         <h2>Model Training</h2>
+         <p>Initial training for 10 epochs on the MobilenetV2 model.
+             Initial validation accuracy was &lt; 2%.
+             After training approximately 81%.
+         </p>
+         <img src="static/initial_training.png" style="width:50%" alt="initial loss and accuracy">
+         <p>
+             Fine-tuned the model for another 10 epochs, by continuing training but also setting
+             the last 54 layers to trainable.
+             Accuracy improved to about 87 %.
+        </p>
+     </div>
+
+     <div id="App" class="w3-container">
+         <h3>Conversion to TFLite + App</h3>
+         <p>Converted the model to a TFLite Model, so I can use the TFLite Interpreter in the app.</p>
+         <p>Created the Interpreter in the Flask Application and build the different html pages around it.
+             Used CSS from W3.CSS to style the App.
+         </p>
+     </div>
 </div>
 {% endblock %}

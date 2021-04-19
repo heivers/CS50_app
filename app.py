@@ -1,4 +1,5 @@
 """created by barthk12"""
+from itertools import zip_longest
 import os
 from flask import Flask, flash, redirect, render_template, request, session, url_for, send_from_directory
 from flask_session import Session
@@ -14,7 +15,7 @@ UPLOAD_FOLDER = os.path.join(os.getcwd(),"static/photos")
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+ALLOWED_EXTENSIONS = {'jpg', 'jpeg'}
 
 
 # Configure app
@@ -124,6 +125,9 @@ def classifier():
              top = results.argsort()[-1:][::-1][0]
              prediction = breeds[top]
              probability = f'{results[top]*100:.2f}'
+             if results[top] < 0.70:
+                 prediction = "Sorry, cannot classify."
+                 probability = ""
              return render_template("result.html", filename=filename, prediction=prediction, probability=probability)
          else:
              flash("Filetype not supported")

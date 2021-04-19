@@ -7,19 +7,25 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body 
+            {
+                background-color: ghostwhite;
+            }
+        </style>
         <script src="https://www.w3schools.com/lib/w3.js"></script>
     </head>
     <body>
         <!--Navigation Bar-->
-        <div class="w3-top w3-bar w3-black">
+        <div class="w3-top w3-bar w3-black w3-padding-large">
             <a href="/" class="w3-bar-item w3-button">Home</a>
             <a href="/classifier" class="w3-bar-item w3-button">Pet Classifier</a>
             <a href="/about" class="w3-bar-item w3-button">About This Project</a>
         </div>
 
-       <!--  <div class=w3-padding-large></div>-->
+       <div class="w3-padding-large"></div>
 
-        <div class="w3-panel w3-red">
+        <div class="w3-panel w3-red w3-padding-large">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <ul class=flashes>
