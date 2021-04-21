@@ -6,6 +6,18 @@
 
 {% block main %}
 
+<div class="w3-panel w3-red w3-padding-small">
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          <ul class=flashes>
+          {% for message in messages %}
+              <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+      {% endif %}
+  {% endwith %}
+</div>
+
 <div class="w3-content">
 <h1>Pet Classifier</h1>
 <h2>Please upload a picture of your cat or dog.</h2>
