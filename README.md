@@ -36,3 +36,20 @@ A classify page to upload an image and classify. When everything is ok, it's rou
 Initially I showed all results, changed this to cannot classify if model is less than 70% sure.\
 Also added an about this project page, with a little info on me and a short explanation for the App.\
 App deployed at https://cs50-bart.herokuapp.com/
+
+## 4. Using the App.
+
+You can go to https://cs50-bart.herokuapp.com/. On the home page, you will see a table with supported breeds.\
+To make a prediction either click on the "click here" or go to the Pet Classifier in the menu.\
+In the pet classifier, you can upload a jpeg/jpg Image. All other extensions are rejected. Not choosing a file is also treated with a flash error message.\
+After selecting a picture, you click on classify. This invokes the Tensorflow Lite Interpreter. \
+The App will open the results page.\
+If the interpreter is more than 70% certain, the dog or cat belongs to one of the known breeds, it will show the breed and the probability the model assigns to it.\
+With less than 70%, the message will say that it cannot be classified.\
+\
+You can also look at the About This Project page to learn a bit more about the project.
+
+## 5. Future enhancements
+More breeds: Using different datasets, trying to incorporate more breeds into the app.\
+There's a Stanford Dogs dataset and I found scraped data online with many cat examples.\
+Upload feature: If the dog or cat is wrongly classified or cannot be classified. Present an upload feature, to upload the picture of the animal and a label.
